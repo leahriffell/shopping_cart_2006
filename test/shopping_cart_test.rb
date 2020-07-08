@@ -75,4 +75,14 @@ class ShoppingCartTest < MiniTest::Test
     assert_equal true, cart.is_full?
   end
 
+  def test_it_can_return_products_by_category
+    cart = ShoppingCart.new("King Soopers", "30items")
+    product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
+    product2 = Product.new(:meat, 'chicken', 4.50, '2')
+    product3 = Product.new(:paper, 'tissue paper', 1.25, '1')
+    cart.add_product(product1)
+    cart.add_product(product2)
+    cart.add_product(product3)
+    assert_equal [product1, product3], cart.products_by_category(:paper)
+  end
 end

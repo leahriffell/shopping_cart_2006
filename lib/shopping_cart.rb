@@ -29,4 +29,10 @@ class ShoppingCart
   def is_full?
     total_number_of_products > return_capacity_as_integer
   end
+
+  def products_by_category(desired_category)
+    @products.find_all do |product|
+      product.category == desired_category
+    end
+  end
 end
