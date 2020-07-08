@@ -10,4 +10,15 @@ class ShoppingCart
   def add_product(product)
     @products << product
   end
+
+  # def details
+  #   Hash.new(name: @name, capacity: @capacity)
+  # end
+
+  def total_number_of_products
+      @products.map do |product|
+        product.quantity
+      end.sum
+      # sum enumerable returns sum of integers in array
+  end
 end
