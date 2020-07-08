@@ -18,6 +18,6 @@ class Product
   end
 
   def hoard
-
+    @is_hoarded = true
   end
 end
