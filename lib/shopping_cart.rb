@@ -11,6 +11,10 @@ class ShoppingCart
     @products << product
   end
 
+  def return_capacity_as_integer
+    @capacity.split('items')[0].to_i
+  end
+
   # def details
   #   Hash.new(name: @name, capacity: @capacity)
   # end
@@ -20,5 +24,9 @@ class ShoppingCart
         product.quantity
       end.sum
       # sum enumerable returns sum of integers in array
+  end
+
+  def is_full?
+    total_number_of_products > return_capacity_as_integer
   end
 end
