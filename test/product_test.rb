@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/product'
+require '../lib/product'
 
 class ProductTest < Minitest::Test
   #Iteration1
@@ -10,7 +10,7 @@ class ProductTest < Minitest::Test
   end
 
   def test_it_has_a_category
-    skip
+    # skip
     product = Product.new(:paper, 'toilet paper', 3.70, '10')
     assert_equal :paper, product.category
   end
