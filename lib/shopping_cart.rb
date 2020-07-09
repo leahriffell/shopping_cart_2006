@@ -40,9 +40,12 @@ class ShoppingCart
     ((total_number_of_products.to_f / return_capacity_as_integer) * 100).round(2)
   end
 
-  # def sorted_products_by_quantity
-  #   @products.sort_by do |product|
-  #     product.quantity
-  #   end
-  # end
+  def sorted_products_by_quantity
+    # sort by sorts least to greatest so we have to flip it
+    ascending_sorted = @products.sort_by do |product|
+      product.quantity
+    end
+
+    ascending_sorted.reverse
+  end
 end
