@@ -48,4 +48,18 @@ class ShoppingCart
 
     ascending_sorted.reverse
   end
+
+  def product_breakdown
+    unique_categories =
+      products.map do |product|
+        product.category
+      end.uniq
+
+    breakdown = {}
+
+    unique_categories.each do |category|
+      breakdown[category] = products_by_category(category)
+    end
+    breakdown
+  end
 end
